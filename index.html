@@ -1,0 +1,2372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velora Jewels — The History of Jewelry</title>
+    <meta
+      name="description"
+      content="Velora Jewels — a museum-inspired experience exploring the history of jewelry through eras, materials, and iconic forms."
+    />
+    <meta name="theme-color" content="#0b0a0f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #07060b;
+        --bg-2: #0b0a10;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-2: rgba(255, 255, 255, 0.1);
+        --text: rgba(255, 255, 255, 0.9);
+        --muted: rgba(255, 255, 255, 0.64);
+        --faint: rgba(255, 255, 255, 0.42);
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --radius-lg: 26px;
+        --ring: rgba(255, 255, 255, 0.22);
+        --accent: #e6cf9a;
+        --accent-2: #f6efe2;
+        --accent-3: rgba(194, 166, 255, 0.55);
+        --max: 1120px;
+        --pad: clamp(18px, 3vw, 32px);
+        --font-display: "Fraunces", ui-serif, Georgia, serif;
+        --font-sans:
+          "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--bg);
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--text);
+        background: radial-gradient(
+            1000px 560px at 18% 12%,
+            rgba(230, 207, 154, 0.16),
+            transparent 62%
+          ),
+          radial-gradient(
+            1100px 680px at 86% 18%,
+            rgba(194, 166, 255, 0.14),
+            transparent 66%
+          ),
+          linear-gradient(180deg, var(--bg), var(--bg-2));
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+        opacity: 0.06;
+        mix-blend-mode: overlay;
+        z-index: 1;
+      }
+
+      header,
+      main,
+      footer,
+      dialog {
+        position: relative;
+        z-index: 2;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ::selection {
+        background: rgba(233, 215, 168, 0.26);
+      }
+
+      .wrap {
+        width: min(var(--max), calc(100% - var(--pad) * 2));
+        margin: 0 auto;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.04)
+        );
+        backdrop-filter: blur(10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .spark {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #ffffff,
+          rgba(255, 255, 255, 0.35) 55%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        box-shadow:
+          0 0 0 2px rgba(233, 215, 168, 0.18),
+          0 0 24px rgba(233, 215, 168, 0.25),
+          0 0 60px rgba(194, 166, 255, 0.2);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(14px);
+        background: linear-gradient(
+          180deg,
+          rgba(11, 10, 15, 0.78),
+          rgba(11, 10, 15, 0.35)
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        gap: 18px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 210px;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        background: radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.1) 40%,
+            rgba(255, 255, 255, 0) 60%
+          ),
+          conic-gradient(
+            from 210deg,
+            rgba(233, 215, 168, 0.9),
+            rgba(194, 166, 255, 0.9),
+            rgba(104, 240, 217, 0.9),
+            rgba(233, 215, 168, 0.9)
+          );
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+      }
+
+      .brand strong {
+        font-family: var(--font-display);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        font-size: 16px;
+      }
+
+      .brand span {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        margin-top: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.74);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        border-radius: 999px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .cta {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        min-width: 210px;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          border-color 160ms ease;
+        user-select: none;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+
+      .btn.primary {
+        border: 1px solid rgba(233, 215, 168, 0.32);
+        background: radial-gradient(
+            160px 160px at 30% 0%,
+            rgba(255, 255, 255, 0.22),
+            transparent 60%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(233, 215, 168, 0.26),
+            rgba(194, 166, 255, 0.22),
+            rgba(104, 240, 217, 0.18)
+          );
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .btn.primary:hover {
+        border-color: rgba(233, 215, 168, 0.5);
+      }
+
+      main {
+        padding-bottom: 60px;
+      }
+
+      .hero {
+        position: relative;
+        padding: clamp(40px, 7vw, 84px) 0 30px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: clamp(18px, 4vw, 44px);
+      }
+
+      .hero h1 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-size: clamp(46px, 6vw, 76px);
+        margin: 18px 0 14px;
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          92deg,
+          rgba(246, 239, 226, 0.98),
+          rgba(230, 207, 154, 1),
+          rgba(246, 239, 226, 0.98)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 52ch;
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .hero-actions {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .micro {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
+      .micro .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .hero-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: var(--shadow);
+        background: rgba(255, 255, 255, 0.03);
+        min-height: 520px;
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            400px 400px at 35% 20%,
+            rgba(233, 215, 168, 0.22),
+            transparent 60%
+          ),
+          radial-gradient(
+            380px 380px at 80% 75%,
+            rgba(194, 166, 255, 0.18),
+            transparent 65%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0)
+          );
+        pointer-events: none;
+      }
+
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: linear-gradient(
+          115deg,
+          transparent 35%,
+          rgba(246, 239, 226, 0.12) 48%,
+          transparent 62%
+        );
+        transform: translateX(-55%) rotate(10deg);
+        opacity: 0.75;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        animation: sweep 12s ease-in-out infinite;
+      }
+
+      .hero-img {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            620px 520px at 20% 18%,
+            rgba(230, 207, 154, 0.28),
+            transparent 62%
+          ),
+          radial-gradient(
+            720px 560px at 82% 26%,
+            rgba(194, 166, 255, 0.16),
+            transparent 66%
+          ),
+          linear-gradient(180deg, rgba(7, 6, 11, 0.2), rgba(7, 6, 11, 0.92)),
+          url("https://commons.wikimedia.org/wiki/Special:FilePath/The_Hope_Diamond_(107006041).jpg?width=2200");
+        background-size: auto, auto, auto, cover;
+        background-position: 50% 50%;
+        filter: saturate(1.08) contrast(1.08);
+        transform: scale(1.02);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(11, 10, 15, 0.26),
+            rgba(11, 10, 15, 0.92)
+          ),
+          radial-gradient(
+            900px 600px at 50% 20%,
+            rgba(11, 10, 15, 0.06),
+            rgba(11, 10, 15, 0.94) 65%
+          );
+      }
+
+      .hero-badges {
+        position: absolute;
+        inset: auto 18px 18px 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .stat {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        padding: 14px 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 22px;
+        letter-spacing: -0.01em;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.66);
+        line-height: 1.4;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(28px, 3.2vw, 40px);
+        letter-spacing: -0.02em;
+      }
+
+      .section-head p {
+        margin: 0;
+        max-width: 54ch;
+        color: rgba(255, 255, 255, 0.64);
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .collections {
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+
+      .gcard {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gcard:hover {
+        transform: translateY(-2px);
+        border-color: rgba(230, 207, 154, 0.36);
+      }
+
+      .gcard img {
+        width: 100%;
+        height: 240px;
+        display: block;
+        object-fit: cover;
+      }
+
+      .gcard .cap {
+        padding: 14px 14px 16px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .gcard .cap strong {
+        font-family: var(--font-display);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        font-size: 18px;
+      }
+
+      .gcard .cap span {
+        color: rgba(255, 255, 255, 0.66);
+        line-height: 1.6;
+        font-size: 13px;
+      }
+
+      .gcard .cap em {
+        color: rgba(255, 255, 255, 0.62);
+        font-style: normal;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+        transform: translateZ(0);
+        transition:
+          transform 200ms ease,
+          border-color 200ms ease,
+          background 200ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: -45%;
+        background: linear-gradient(
+          115deg,
+          transparent 38%,
+          rgba(246, 239, 226, 0.08) 50%,
+          transparent 62%
+        );
+        transform: translateX(-58%) rotate(10deg);
+        opacity: 0;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        transition: opacity 200ms ease;
+      }
+
+      .card:hover::after {
+        opacity: 0.85;
+        animation: sweep 1.4s ease-out 1;
+      }
+
+      .card .img {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        filter: saturate(1.05) contrast(1.05);
+        transform: scale(1.04);
+      }
+
+      .card .img::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(7, 6, 11, 0),
+          rgba(7, 6, 11, 0.92)
+        );
+        pointer-events: none;
+      }
+
+      .aurora .img {
+        background-image: radial-gradient(
+            520px 340px at 28% 24%,
+            rgba(233, 215, 168, 0.6),
+            transparent 62%
+          ),
+          radial-gradient(
+            520px 340px at 82% 70%,
+            rgba(104, 240, 217, 0.22),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #23172f, #0b0a12);
+      }
+
+      .nocturne .img {
+        background-image: radial-gradient(
+            520px 340px at 30% 26%,
+            rgba(194, 166, 255, 0.46),
+            transparent 62%
+          ),
+          radial-gradient(
+            540px 380px at 72% 76%,
+            rgba(233, 215, 168, 0.18),
+            transparent 66%
+          ),
+          linear-gradient(135deg, #0c0b16, #03030a);
+      }
+
+      .sculpt .img {
+        background-image: radial-gradient(
+            560px 420px at 22% 26%,
+            rgba(255, 255, 255, 0.14),
+            transparent 62%
+          ),
+          radial-gradient(
+            520px 380px at 78% 70%,
+            rgba(104, 240, 217, 0.18),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #17182a, #070712);
+      }
+
+      .heirloom .img {
+        background-image: radial-gradient(
+            520px 380px at 28% 22%,
+            rgba(233, 215, 168, 0.46),
+            transparent 62%
+          ),
+          radial-gradient(
+            560px 420px at 78% 70%,
+            rgba(194, 166, 255, 0.22),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #1e1424, #060611);
+      }
+
+      .card .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(11, 10, 15, 0.08),
+            rgba(11, 10, 15, 0.92)
+          ),
+          radial-gradient(
+            600px 380px at 35% 20%,
+            rgba(233, 215, 168, 0.22),
+            transparent 60%
+          );
+      }
+
+      .card .content {
+        position: relative;
+        padding: 18px 18px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 240px;
+      }
+
+      .card h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 24px;
+        letter-spacing: -0.01em;
+        font-weight: 600;
+      }
+
+      .card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.66);
+        line-height: 1.65;
+        max-width: 50ch;
+        font-size: 14px;
+      }
+
+      .card .meta {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
+      .chip {
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(10px);
+      }
+
+      .c1 {
+        grid-column: 1 / span 7;
+      }
+
+      .c2 {
+        grid-column: 8 / span 5;
+      }
+
+      .c3 {
+        grid-column: 1 / span 5;
+      }
+
+      .c4 {
+        grid-column: 6 / span 7;
+      }
+
+      .pieces-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+
+      .piece {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .piece:hover {
+        transform: translateY(-2px);
+        border-color: rgba(230, 207, 154, 0.36);
+      }
+
+      .piece .ph {
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .halo .ph {
+        background-image: radial-gradient(
+            520px 280px at 30% 25%,
+            rgba(233, 215, 168, 0.6),
+            transparent 60%
+          ),
+          radial-gradient(
+            520px 320px at 76% 72%,
+            rgba(194, 166, 255, 0.34),
+            transparent 62%
+          ),
+          linear-gradient(135deg, #21152c, #070712);
+      }
+
+      .drops .ph {
+        background-image: radial-gradient(
+            520px 320px at 30% 26%,
+            rgba(194, 166, 255, 0.44),
+            transparent 62%
+          ),
+          radial-gradient(
+            520px 320px at 78% 74%,
+            rgba(104, 240, 217, 0.18),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #0f0c1e, #05040d);
+      }
+
+      .chain .ph {
+        background-image: radial-gradient(
+            520px 320px at 24% 24%,
+            rgba(255, 255, 255, 0.16),
+            transparent 62%
+          ),
+          radial-gradient(
+            520px 320px at 78% 78%,
+            rgba(233, 215, 168, 0.22),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #151524, #060610);
+      }
+
+      .piece .ph::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            380px 200px at 30% 20%,
+            rgba(255, 255, 255, 0.22),
+            transparent 60%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(11, 10, 15, 0.08),
+            rgba(11, 10, 15, 0.8)
+          );
+        pointer-events: none;
+      }
+
+      @keyframes sweep {
+        0% {
+          transform: translateX(-58%) rotate(10deg);
+        }
+        55% {
+          transform: translateX(40%) rotate(10deg);
+        }
+        100% {
+          transform: translateX(40%) rotate(10deg);
+        }
+      }
+
+      .piece .pd {
+        padding: 16px 16px 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .piece .name {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .piece h4 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.66);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .piece p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.64);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .piece .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 2px;
+      }
+
+      .btn.small {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .story {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: radial-gradient(
+            700px 420px at 20% 10%,
+            rgba(194, 166, 255, 0.16),
+            transparent 58%
+          ),
+          radial-gradient(
+            700px 420px at 80% 60%,
+            rgba(233, 215, 168, 0.14),
+            transparent 60%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.03)
+          );
+        overflow: hidden;
+        padding: 22px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      .story h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: -0.02em;
+      }
+
+      .story p {
+        margin: 12px 0 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.75;
+        font-size: 15px;
+      }
+
+      .story .points {
+        margin-top: 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .point {
+        display: grid;
+        grid-template-columns: 12px 1fr;
+        gap: 10px;
+        align-items: start;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .point i {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        margin-top: 6px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 255, 255, 1),
+          rgba(233, 215, 168, 0.5) 55%,
+          rgba(194, 166, 255, 0.15) 75%,
+          rgba(255, 255, 255, 0) 80%
+        );
+        box-shadow: 0 0 22px rgba(233, 215, 168, 0.28);
+      }
+
+      .atelier {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        position: relative;
+        min-height: 380px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      .atelier .img {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            620px 420px at 20% 22%,
+            rgba(104, 240, 217, 0.14),
+            transparent 62%
+          ),
+          radial-gradient(
+            700px 480px at 80% 75%,
+            rgba(233, 215, 168, 0.18),
+            transparent 64%
+          ),
+          conic-gradient(
+            from 210deg at 52% 44%,
+            rgba(255, 255, 255, 0.08),
+            rgba(194, 166, 255, 0.12),
+            rgba(255, 255, 255, 0.06),
+            rgba(233, 215, 168, 0.1),
+            rgba(255, 255, 255, 0.08)
+          ),
+          linear-gradient(135deg, #0e0e19, #05040f);
+        filter: saturate(1.08) contrast(1.08);
+        transform: scale(1.02);
+      }
+
+      .atelier .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(11, 10, 15, 0.1),
+            rgba(11, 10, 15, 0.92)
+          ),
+          radial-gradient(
+            700px 420px at 25% 18%,
+            rgba(104, 240, 217, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 420px at 80% 70%,
+            rgba(233, 215, 168, 0.16),
+            transparent 60%
+          );
+      }
+
+      .atelier .cap {
+        position: absolute;
+        inset: auto 18px 18px 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .atelier .cap strong {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 26px;
+        letter-spacing: -0.02em;
+      }
+
+      .atelier .cap span {
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.6;
+        font-size: 14px;
+        max-width: 52ch;
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .quote {
+        padding: 18px 18px 18px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .quote p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.75;
+        font-size: 14px;
+      }
+
+      .quote .who {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
+      .stars {
+        color: rgba(233, 215, 168, 0.86);
+        letter-spacing: 0.18em;
+        font-size: 12px;
+      }
+
+      .newsletter {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 22px;
+        background: radial-gradient(
+            700px 420px at 20% 10%,
+            rgba(233, 215, 168, 0.14),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 420px at 80% 70%,
+            rgba(194, 166, 255, 0.16),
+            transparent 60%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.03)
+          );
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .newsletter h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 30px;
+        letter-spacing: -0.02em;
+      }
+
+      .newsletter p {
+        margin: 10px 0 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      form {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      input[type="email"] {
+        flex: 1 1 220px;
+        min-width: 220px;
+        padding: 12px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.9);
+        outline: none;
+        font-size: 14px;
+      }
+
+      input[type="email"]:focus {
+        border-color: rgba(233, 215, 168, 0.45);
+        box-shadow: 0 0 0 6px rgba(233, 215, 168, 0.12);
+      }
+
+      footer {
+        padding: 34px 0 44px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+          180deg,
+          rgba(11, 10, 15, 0),
+          rgba(11, 10, 15, 0.75)
+        );
+      }
+
+      .foot {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+
+      .foot p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.65;
+        font-size: 13px;
+      }
+
+      .foot .links {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 13px;
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 18px 0;
+      }
+
+      details.fold {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        padding: 16px 16px;
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
+      }
+
+      details.fold summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.78);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 13px;
+        user-select: none;
+      }
+
+      details.fold summary::-webkit-details-marker {
+        display: none;
+      }
+
+      details.fold summary::after {
+        content: "Open";
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      details.fold[open] summary::after {
+        content: "Close";
+      }
+
+      details.fold[open] summary {
+        margin-bottom: 16px;
+      }
+
+      dialog {
+        width: min(760px, calc(100% - 28px));
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 22px;
+        background: rgba(15, 13, 22, 0.86);
+        backdrop-filter: blur(14px);
+        color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+        padding: 0;
+      }
+
+      dialog::backdrop {
+        background: radial-gradient(
+          900px 420px at 50% 20%,
+          rgba(194, 166, 255, 0.18),
+          rgba(11, 10, 15, 0.72)
+        );
+      }
+
+      .modal {
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        gap: 0;
+      }
+
+      .modal .mimg {
+        min-height: 320px;
+        background-size: cover;
+        background-position: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      .lookbook-img {
+        background-image: linear-gradient(
+            180deg,
+            rgba(7, 6, 11, 0.08),
+            rgba(7, 6, 11, 0.92)
+          ),
+          url("https://commons.wikimedia.org/wiki/Special:FilePath/Victorian_Hair_Mourning_Jewelry_1.jpg?width=1400");
+      }
+
+      .consult-img {
+        background-image: radial-gradient(
+            560px 340px at 22% 26%,
+            rgba(104, 240, 217, 0.18),
+            transparent 62%
+          ),
+          radial-gradient(
+            560px 380px at 78% 72%,
+            rgba(233, 215, 168, 0.26),
+            transparent 64%
+          ),
+          linear-gradient(135deg, #10111f, #060610);
+      }
+
+      .modal .mimg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(11, 10, 15, 0.06),
+          rgba(11, 10, 15, 0.86)
+        );
+      }
+
+      .modal .mbody {
+        padding: 18px 18px 18px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .modal h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: -0.02em;
+      }
+
+      .modal p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      .modal .line {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 8px 0 6px;
+      }
+
+      .modal .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
+      .modal .close {
+        justify-self: end;
+      }
+
+      .kicker {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .kicker .line {
+        height: 1px;
+        width: 28px;
+        background: rgba(255, 255, 255, 0.18);
+        margin: 0;
+      }
+
+      .kicker span {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.64);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-card {
+          min-height: 440px;
+        }
+
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .newsletter {
+          grid-template-columns: 1fr;
+        }
+
+        form {
+          justify-content: stretch;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .pieces-grid,
+        .timeline,
+        .gallery-grid,
+        .testimonials {
+          grid-template-columns: 1fr;
+        }
+
+        .collections {
+          grid-template-columns: 1fr;
+        }
+
+        .c1,
+        .c2,
+        .c3,
+        .c4 {
+          grid-column: auto;
+        }
+
+        .hero-badges {
+          grid-template-columns: 1fr;
+        }
+
+        .foot {
+          grid-template-columns: 1fr;
+        }
+
+        .foot .links {
+          justify-content: flex-start;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="Velora Jewels home">
+          <span class="mark" aria-hidden="true"></span>
+          <span>
+            <strong>Velora Jewels</strong>
+            <span>Gemstone cabinet • Curated</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#gemstones">Gemstones</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#materials">Materials</a>
+          <a href="#notes">Notes</a>
+        </nav>
+        <div class="cta">
+          <a class="btn" href="#gemstones">Explore</a>
+          <button class="btn primary" type="button" data-open="catalogue">
+            Request catalogue
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="pill">
+              <span class="spark" aria-hidden="true"></span>
+              <span>Exhibition • Gemstones & jewelry</span>
+            </div>
+            <h1>
+              Gemstones,
+              <span class="gradient-text">formally curated</span>.
+            </h1>
+            <p>
+              A refined guide to the stones that define jewelry: how they catch
+              light, how they wear, and how to care for them—without losing the
+              romance.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#gemstones">Explore gemstones</a>
+              <a class="btn" href="#gallery">View gallery</a>
+            </div>
+            <div class="micro" aria-label="Highlights">
+              <span>Diamond to amethyst</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span>Cut, clarity, care</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span>Jewelry through eras</span>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Hero image">
+            <div class="hero-img" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-badges" aria-hidden="true">
+              <div class="stat">
+                <strong>Mohs</strong>
+                <span>Hardness and daily-wear suitability</span>
+              </div>
+              <div class="stat">
+                <strong>Cut</strong>
+                <span>Brilliance, fire, and surface glow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gemstones">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">
+                <span class="line" aria-hidden="true"></span>
+                <span>Gemstones</span>
+              </div>
+              <h2>Signature stones, at a glance.</h2>
+            </div>
+            <p>
+              Select a gemstone to view key properties, typical jewelry use, and
+              care notes.
+            </p>
+          </div>
+
+          <div class="grid timeline" aria-label="Gemstone guide">
+            <article class="card" aria-label="Diamond">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/The_Hope_Diamond_(107006041).jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Diamond</h3>
+                <p>Brilliant, durable, and iconic—defined by cut and light.</p>
+                <div class="meta">
+                  <span class="chip">Mohs 10</span>
+                  <button class="btn small" type="button" data-piece="diamond">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Sapphire">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Star_of_India_Gem.JPG?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Sapphire</h3>
+                <p>Deep color with excellent wear—an heirloom stone.</p>
+                <div class="meta">
+                  <span class="chip">Mohs 9</span>
+                  <button class="btn small" type="button" data-piece="sapphire">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Ruby">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/DeLong_Star_Ruby1.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Ruby</h3>
+                <p>Vivid red corundum—rare, expressive, and resilient.</p>
+                <div class="meta">
+                  <span class="chip">Mohs 9</span>
+                  <button class="btn small" type="button" data-piece="ruby">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Emerald">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Hooker%20emerald.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Emerald</h3>
+                <p>Rich green beryl, prized for color—handle with care.</p>
+                <div class="meta">
+                  <span class="chip">Mohs 7.5–8</span>
+                  <button class="btn small" type="button" data-piece="emerald">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Pearl">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Perlenkette.JPG?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Pearl</h3>
+                <p>Lustre over sparkle—soft, formal, and timeless.</p>
+                <div class="meta">
+                  <span class="chip">Soft</span>
+                  <button class="btn small" type="button" data-piece="pearl">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Amethyst">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Amethyst%20gem%20stone%20texture%20wwarby%20flickr.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Amethyst</h3>
+                <p>Purple quartz with a clean glow—excellent for statement color.</p>
+                <div class="meta">
+                  <span class="chip">Mohs 7</span>
+                  <button class="btn small" type="button" data-piece="amethyst">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="history">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">
+                <span class="line" aria-hidden="true"></span>
+                <span>Jewelry</span>
+              </div>
+              <h2>Jewelry through eras, as context.</h2>
+            </div>
+            <p>
+              Optional reading: how taste and technique change around the stones
+              a culture could access.
+            </p>
+          </div>
+
+          <details class="fold">
+            <summary>Open jewelry timeline</summary>
+            <div class="grid timeline" aria-label="Jewelry history timeline">
+            <article class="card" aria-label="Ancient Egypt">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Usekh_Collar_of_Queen_Ahhotep_II.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Ancient Egypt</h3>
+                <p>
+                  Gold, carnelian, and faience formed protective and symbolic
+                  adornments, often tied to status and the afterlife.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 2000–1000 BCE</span>
+                  <button class="btn small" type="button" data-piece="egypt">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Classical and Hellenistic">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Goldschmuck_-_Ohrringe.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Classical & Hellenistic</h3>
+                <p>
+                  Granulation, filigree, and naturalistic motifs brought
+                  technical refinement and narrative symbolism.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 500–100 BCE</span>
+                  <button class="btn small" type="button" data-piece="hellenic">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Early Medieval">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Breadalbane_Brooch.JPG?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Early Medieval</h3>
+                <p>
+                  Brooches and metalwork served both function and authority,
+                  combining intricate patterning with precious materials.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 700–1100</span>
+                  <button class="btn small" type="button" data-piece="medieval">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Renaissance and Baroque">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Reinhold_Vasters_-_Renaissance-Style_Pendant_with_Judith_Holding_the_Head_of_Holofernes_-_Walters_44424_-_Side_B.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Renaissance & Baroque</h3>
+                <p>
+                  Portrait gems and enamelled pendants highlighted narrative
+                  scenes, heraldry, and courtly taste.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 1500–1700</span>
+                  <button class="btn small" type="button" data-piece="renaissance">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Victorian">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Victorian_Hair_Mourning_Jewelry_1.jpg?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Victorian</h3>
+                <p>
+                  Sentiment and symbolism shaped jewelry: lockets, hairwork, and
+                  coded motifs tied to memory and mourning.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 1837–1901</span>
+                  <button class="btn small" type="button" data-piece="victorian">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Art Nouveau to Art Deco">
+              <div
+                class="img"
+                style="
+                  background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Peacock_Broche_-_Ren%C3%A9_Lalique.JPG?width=2000');
+                "
+                aria-hidden="true"
+              ></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="content">
+                <h3>Art Nouveau → Art Deco</h3>
+                <p>
+                  Nature-inspired lines gave way to geometry, strong contrasts,
+                  and modern materials in the early 20th century.
+                </p>
+                <div class="meta">
+                  <span class="chip">c. 1890–1940</span>
+                  <button class="btn small" type="button" data-piece="deco">
+                    Read more
+                  </button>
+                </div>
+              </div>
+            </article>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">
+                <span class="line" aria-hidden="true"></span>
+                <span>Gallery</span>
+              </div>
+              <h2>Gemstones in light, jewelry in form.</h2>
+            </div>
+            <p>
+              A formal selection of gemstones and jewelry objects for mood,
+              surface, and silhouette.
+            </p>
+          </div>
+
+          <div class="grid gallery-grid" aria-label="Gallery images">
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Hope_Diamond_(107006041).jpg?width=1600"
+                alt="The Hope Diamond"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Brilliance</strong>
+                <span>Cut and facet geometry control how light returns.</span>
+                <em>Diamond</em>
+              </figcaption>
+            </figure>
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Star_of_India_Gem.JPG?width=1600"
+                alt="Star sapphire known as the Star of India"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Color</strong>
+                <span>Saturation and tone define presence at distance.</span>
+                <em>Sapphire</em>
+              </figcaption>
+            </figure>
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Hooker%20emerald.jpg?width=1600"
+                alt="Emerald in a brooch setting"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Cabinet Jewel</strong>
+                <span>Large stones emphasize color over sparkle.</span>
+                <em>Emerald</em>
+              </figcaption>
+            </figure>
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/DeLong_Star_Ruby1.jpg?width=1600"
+                alt="Star ruby gemstone"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Rarity</strong>
+                <span>Inclusions and hue give each stone its fingerprint.</span>
+                <em>Ruby</em>
+              </figcaption>
+            </figure>
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Perlenkette.JPG?width=1600"
+                alt="Pearl necklace"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Lustre</strong>
+                <span>Soft glow that reads formal and timeless.</span>
+                <em>Pearl</em>
+              </figcaption>
+            </figure>
+            <figure class="gcard">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Amethyst%20gem%20stone%20texture%20wwarby%20flickr.jpg?width=1600"
+                alt="Amethyst gemstone texture"
+                loading="lazy"
+              />
+              <figcaption class="cap">
+                <strong>Hue</strong>
+                <span>Color that holds presence without heavy setting.</span>
+                <em>Amethyst</em>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="materials">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">
+                <span class="line" aria-hidden="true"></span>
+                <span>Materials</span>
+              </div>
+              <h2>Materials and techniques, in brief.</h2>
+            </div>
+            <p>
+              The “look” of an era is often the result of tools: alloying,
+              stone-cutting, setting styles, and surface finishing.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="story">
+              <h3>What changes through time</h3>
+              <p>
+                Across centuries, jewelry evolves when materials become more
+                available, tools improve, and tastes shift. A few technical
+                themes return again and again.
+              </p>
+              <div class="points" aria-label="Craft highlights">
+                <div class="point">
+                  <i aria-hidden="true"></i>
+                  <span
+                    >Goldwork: casting, hammering, granulation, and filigree
+                    define much early technique.</span
+                  >
+                </div>
+                <div class="point">
+                  <i aria-hidden="true"></i>
+                  <span
+                    >Gem cutting: from cabochons to modern faceting, shaping how
+                    light is “held.”</span
+                  >
+                </div>
+                <div class="point">
+                  <i aria-hidden="true"></i>
+                  <span
+                    >Setting styles: bezel, prong, pavé, channel—each changes the
+                    silhouette and durability.</span
+                  >
+                </div>
+                <div class="point">
+                  <i aria-hidden="true"></i>
+                  <span
+                    >Care: hardness, toughness, and chemicals matter as much as
+                    beauty—especially for emeralds, pearls, and opals.</span
+                  >
+                </div>
+              </div>
+              <div class="hero-actions">
+                <button class="btn primary" type="button" data-open="catalogue">
+                  Request catalogue
+                </button>
+                <a class="btn" href="#gallery">View gallery</a>
+              </div>
+            </div>
+
+            <div class="atelier" aria-label="Atelier image">
+              <div class="img" aria-hidden="true"></div>
+              <div class="shade" aria-hidden="true"></div>
+              <div class="cap" aria-hidden="true">
+                <strong>Atelier finishing</strong>
+                <span>
+                  A quiet studio, careful hands, and a final polish designed to
+                  reflect light like a small miracle.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notes">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">
+                <span class="line" aria-hidden="true"></span>
+                <span>Notes</span>
+              </div>
+              <h2>Curatorial notes.</h2>
+            </div>
+            <p>
+              This page is a design concept and is not an academic catalogue.
+              Images are sourced from Wikimedia Commons file pages.
+            </p>
+          </div>
+
+          <div class="grid testimonials" aria-label="Notes">
+            <figure class="quote">
+              <p>
+                Jewelry’s meaning is often social: worn to signal rank, faith,
+                belonging, and personal milestones.
+              </p>
+              <div class="who">
+                <span>Function</span>
+                <span class="stars" aria-hidden="true">• • •</span>
+              </div>
+            </figure>
+            <figure class="quote">
+              <p>
+                Techniques travel: trade routes and workshops spread materials
+                and methods, reshaping regional styles.
+              </p>
+              <div class="who">
+                <span>Exchange</span>
+                <span class="stars" aria-hidden="true">• • •</span>
+              </div>
+            </figure>
+            <figure class="quote">
+              <p>
+                Modern jewelry often becomes conceptual: studio work, new
+                alloys, and non-precious materials can carry equal value.
+              </p>
+              <div class="who">
+                <span>Modernity</span>
+                <span class="stars" aria-hidden="true">• • •</span>
+              </div>
+            </figure>
+          </div>
+
+          <div class="divider" role="presentation"></div>
+
+          <div class="newsletter" aria-label="Newsletter">
+            <div>
+              <h3>Receive curator notes.</h3>
+              <p>
+                A simple email list for new exhibits, updates, and short reading
+                notes.
+              </p>
+            </div>
+            <form id="signup" novalidate>
+              <input
+                name="email"
+                type="email"
+                placeholder="Email address"
+                autocomplete="email"
+                inputmode="email"
+                required
+                aria-label="Email address"
+              />
+              <button class="btn primary" type="submit">Join</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <p>
+          Velora Jewels is a museum-inspired design concept. Replace text, links,
+          and sources to match your institution or brand.
+        </p>
+        <div class="links" aria-label="Footer links">
+          <a href="#history">History</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#materials">Materials</a>
+          <a href="#notes">Notes</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <dialog id="catalogue" aria-label="Catalogue request">
+      <div class="modal">
+        <div class="mimg lookbook-img" aria-hidden="true"></div>
+        <div class="mbody">
+          <button class="btn small close" type="button" data-close>
+            Close
+          </button>
+          <h3>Catalogue request</h3>
+          <p>
+            This is a design preview: the form doesn’t send anywhere yet. Connect
+            it to your email provider or ticketing system.
+          </p>
+          <div class="line" role="presentation"></div>
+          <div class="row">
+            <span>Format</span>
+            <span>PDF • Email • Print</span>
+          </div>
+          <div class="row">
+            <span>Includes</span>
+            <span>Timeline • Materials • Gallery</span>
+          </div>
+          <div class="row">
+            <span>Frequency</span>
+            <span>Occasional updates</span>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="piece-modal" aria-label="Era details">
+      <div class="modal">
+        <div class="mimg" id="piece-img" aria-hidden="true"></div>
+        <div class="mbody">
+          <button class="btn small close" type="button" data-close>
+            Close
+          </button>
+          <h3 id="piece-title">Era</h3>
+          <p id="piece-desc"></p>
+          <div class="line" role="presentation"></div>
+          <div class="row">
+            <span id="piece-k1-label">Region</span>
+            <span id="piece-k1"></span>
+          </div>
+          <div class="row">
+            <span id="piece-k2-label">Materials</span>
+            <span id="piece-k2"></span>
+          </div>
+          <div class="row">
+            <span id="piece-k3-label">Technique</span>
+            <span id="piece-k3"></span>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+      const pieces = {
+        diamond: {
+          title: "Diamond",
+          desc: "Diamond is valued for brilliance and durability. In jewelry, the cut typically matters more than size: it controls how light returns to the eye.",
+          k1Label: "Mohs hardness",
+          k1: "10",
+          k2Label: "Composition",
+          k2: "Carbon",
+          k3Label: "Care",
+          k3: "Warm water + mild soap; avoid oils and lotions on the pavilion.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/The_Hope_Diamond_(107006041).jpg?width=2200')",
+        },
+        sapphire: {
+          title: "Sapphire",
+          desc: "Sapphire (corundum) is one of the best stones for daily wear. Color and clarity vary widely, with blue as the most recognized form.",
+          k1Label: "Mohs hardness",
+          k1: "9",
+          k2Label: "Composition",
+          k2: "Corundum (Al₂O₃)",
+          k3Label: "Care",
+          k3: "Safe with gentle cleaning; avoid harsh heat/chemicals.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Star_of_India_Gem.JPG?width=2200')",
+        },
+        ruby: {
+          title: "Ruby",
+          desc: "Ruby is red corundum; color is key, and natural inclusions are common. Historically associated with power, protection, and ceremony.",
+          k1Label: "Mohs hardness",
+          k1: "9",
+          k2Label: "Composition",
+          k2: "Corundum (Al₂O₃)",
+          k3Label: "Care",
+          k3: "Treat like sapphire; store separately to avoid scratching softer gems.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/DeLong_Star_Ruby1.jpg?width=2200')",
+        },
+        emerald: {
+          title: "Emerald",
+          desc: "Emerald is green beryl, prized for saturated color. Many stones contain natural inclusions and may be treated, so care is essential.",
+          k1Label: "Mohs hardness",
+          k1: "7.5–8",
+          k2Label: "Composition",
+          k2: "Beryl (Be₃Al₂Si₆O₁₈)",
+          k3Label: "Care",
+          k3: "Avoid ultrasonic/steam; clean gently and protect from impacts.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Hooker%20emerald.jpg?width=2200')",
+        },
+        pearl: {
+          title: "Pearl",
+          desc: "Pearl is organic and prized for lustre rather than sparkle. It reads formal and luminous, but it is softer than most gemstones.",
+          k1Label: "Mohs hardness",
+          k1: "2.5–4.5",
+          k2Label: "Material",
+          k2: "Aragonite + conchiolin",
+          k3Label: "Care",
+          k3: "Last on, first off; avoid perfume; wipe gently after wear.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Perlenkette.JPG?width=2200')",
+        },
+        amethyst: {
+          title: "Amethyst",
+          desc: "Amethyst is purple quartz and a classic choice for bold color. It wears well in rings and pendants when protected from heavy impacts.",
+          k1Label: "Mohs hardness",
+          k1: "7",
+          k2Label: "Composition",
+          k2: "Quartz (SiO₂)",
+          k3Label: "Care",
+          k3: "Avoid long sun exposure; clean with mild soap and water.",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Amethyst%20gem%20stone%20texture%20wwarby%20flickr.jpg?width=2200')",
+        },
+        egypt: {
+          title: "Ancient Egypt",
+          desc: "Jewelry carried protective and cosmological meaning. Broad collars, amulets, and inlay combined color symbolism with precious metalwork for elite and ritual contexts.",
+          k1Label: "Region",
+          k1: "Nile Valley",
+          k2Label: "Materials",
+          k2: "Gold, faience, carnelian, glass",
+          k3Label: "Technique",
+          k3: "Inlay, beadwork, repoussé",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Usekh_Collar_of_Queen_Ahhotep_II.jpg?width=2200')",
+        },
+        hellenic: {
+          title: "Classical & Hellenistic",
+          desc: "Goldsmithing reached remarkable technical refinement. Naturalistic pendants, delicate wirework, and granulation appear alongside myth and court taste.",
+          k1Label: "Region",
+          k1: "Greek world & Mediterranean",
+          k2Label: "Materials",
+          k2: "Gold, gemstones, enamel",
+          k3Label: "Technique",
+          k3: "Filigree, granulation, casting",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Goldschmuck_-_Ohrringe.jpg?width=2200')",
+        },
+        medieval: {
+          title: "Early Medieval",
+          desc: "Jewelry often functioned as fastening and insignia. Brooches, pins, and straps could signal rank while showcasing intricate pattern traditions.",
+          k1Label: "Region",
+          k1: "Europe",
+          k2Label: "Materials",
+          k2: "Gilded metal, silver, glass, garnet",
+          k3Label: "Technique",
+          k3: "Cloisonné, engraving, soldering",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Breadalbane_Brooch.JPG?width=2200')",
+        },
+        renaissance: {
+          title: "Renaissance & Baroque",
+          desc: "Courtly jewelry embraced narrative, portraiture, and display. Enamel, pearls, and gemstones combined with allegory, heraldry, and devotional imagery.",
+          k1Label: "Region",
+          k1: "Europe",
+          k2Label: "Materials",
+          k2: "Gold, enamel, diamonds, pearls",
+          k3Label: "Technique",
+          k3: "Enamelling, stone setting, chasing",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Reinhold_Vasters_-_Renaissance-Style_Pendant_with_Judith_Holding_the_Head_of_Holofernes_-_Walters_44424_-_Side_B.jpg?width=2200')",
+        },
+        victorian: {
+          title: "Victorian",
+          desc: "Jewelry became a personal archive. Lockets, hairwork, and coded motifs expressed sentiment, romance, and mourning with carefully chosen symbols.",
+          k1Label: "Region",
+          k1: "Britain & Europe",
+          k2Label: "Materials",
+          k2: "Gold, jet, hairwork, gemstones",
+          k3Label: "Technique",
+          k3: "Hairwork, engraving, mixed media",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Victorian_Hair_Mourning_Jewelry_1.jpg?width=2200')",
+        },
+        deco: {
+          title: "Art Nouveau → Art Deco",
+          desc: "Around 1900, flowing natural forms and enamel give way to bold geometry and contrast. New materials and industrial precision reshape design language.",
+          k1Label: "Region",
+          k1: "Europe & North America",
+          k2Label: "Materials",
+          k2: "Gold, platinum, glass, enamel, gems",
+          k3Label: "Technique",
+          k3: "Stone setting, glasswork, precision metalwork",
+          bg: "linear-gradient(180deg, rgba(7, 6, 11, 0.18), rgba(7, 6, 11, 0.9)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Peacock_Broche_-_Ren%C3%A9_Lalique.JPG?width=2200')",
+        },
+      };
+
+      function openDialog(dialog) {
+        if (!dialog) return;
+        if (typeof dialog.showModal === "function") dialog.showModal();
+      }
+
+      function closeDialog(dialog) {
+        if (!dialog) return;
+        if (typeof dialog.close === "function") dialog.close();
+      }
+
+      function closeAllDialogs() {
+        document.querySelectorAll("dialog[open]").forEach((d) => d.close());
+      }
+
+      document.addEventListener("click", (e) => {
+        const openId = e.target?.dataset?.open;
+        const isClose = "close" in (e.target?.dataset || {});
+        const pieceId = e.target?.dataset?.piece;
+
+        if (isClose) {
+          const d = e.target.closest("dialog");
+          closeDialog(d);
+          return;
+        }
+
+        if (openId) {
+          openDialog(document.getElementById(openId));
+          return;
+        }
+
+        if (pieceId && pieces[pieceId]) {
+          const p = pieces[pieceId];
+          document.getElementById("piece-title").textContent = p.title;
+          document.getElementById("piece-desc").textContent = p.desc;
+          document.getElementById("piece-k1-label").textContent = p.k1Label;
+          document.getElementById("piece-k2-label").textContent = p.k2Label;
+          document.getElementById("piece-k3-label").textContent = p.k3Label;
+          document.getElementById("piece-k1").textContent = p.k1;
+          document.getElementById("piece-k2").textContent = p.k2;
+          document.getElementById("piece-k3").textContent = p.k3;
+          const el = document.getElementById("piece-img");
+          el.style.backgroundImage = p.bg;
+          openDialog(document.getElementById("piece-modal"));
+          return;
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAllDialogs();
+      });
+
+      document.querySelectorAll("dialog").forEach((d) => {
+        d.addEventListener("click", (e) => {
+          const rect = d.getBoundingClientRect();
+          const isInDialog =
+            rect.top <= e.clientY &&
+            e.clientY <= rect.top + rect.height &&
+            rect.left <= e.clientX &&
+            e.clientX <= rect.left + rect.width;
+          if (!isInDialog) d.close();
+        });
+      });
+
+      const signup = document.getElementById("signup");
+      signup?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = new FormData(signup).get("email")?.toString().trim();
+        if (!email) return;
+        openDialog(document.getElementById("catalogue"));
+        signup.reset();
+      });
+    </script>
+  </body>
+</html>
